@@ -1,0 +1,18 @@
+@use './colors';
+@use './animations';
+@use './small';
+@use './medium';
+@use './large';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Cinzel', sans-serif;
+	font-family: 'Raleway', sans-serif;
+}
