@@ -306,6 +306,43 @@ h1.company-name {
 	}
 }
 
+// PLAN SECTION
+.plans {
+	padding: 6em 2em;
+	background-color: colors.$darker;
+
+	&__box {
+		margin: 1em 0;
+		padding: 2em 1em;
+		text-align: center;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background-color: colors.$dark;
+		cursor: pointer;
+		transition: background-color 0.3s, border 0.3s;
+
+		&:hover {
+			background-color: colors.$darker;
+			border: 1px solid colors.$gold;
+		}
+	}
+
+	&__item{
+		margin: 1em 0;
+
+		&-icon{
+			width: 50px;
+		}
+
+		&-name{
+			margin-top: 0;
+			margin-bottom: 1.5em;
+			font-size: 1.8rem;
+			color: colors.$gold;
+		}
+	}
+}
+
 // Media Queries
 @media (min-width: 576px) {
 	.info {
@@ -386,6 +423,26 @@ h1.company-name {
 			&--three {
 				grid-row: 1/2;
 				grid-column: 7/10;
+			}
+		}
+	}
+
+	.plans{
+		padding: 8em 2em;
+		
+		&__box{
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			align-items: center;
+			justify-items: center;
+		}
+
+		&__item{
+			margin: 0 1em;
+
+			&-name{
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
