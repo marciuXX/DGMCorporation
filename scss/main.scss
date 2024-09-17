@@ -122,32 +122,36 @@ h1.company-name {
 	}
 }
 
-.hamburger {
-	position: absolute;
-	top: 3em;
-	left: 1em;
-	transform: translateY(-50%);
-	z-index: 500;
-
-	&-inner,
-	&-inner::before,
-	&-inner::after {
-		background-color: colors.$white;
-	}
+.overflow-body {
+	overflow: hidden;
 }
 
 // NAV
 .nav {
+	.hamburger {
+		position: fixed;
+		top: 3em;
+		left: 1em;
+		transform: translateY(-50%);
+		z-index: 500;
+
+		&-inner,
+		&-inner::before,
+		&-inner::after {
+			background-color: colors.$white;
+		}
+	}
+
 	&-mobile {
-		position: absolute;
+		position: fixed;
 		top: 0;
-		bottom: 0;
 		left: 0;
-		right: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		height: 100vh;
+		width: 100%;
 		background-color: colors.$white;
 		transform: translateX(-102%);
 		transition: transform 0.3s;
@@ -288,16 +292,18 @@ h1.company-name {
 	}
 
 	&__box-link {
-		display: block;
 		margin-bottom: 2em;
-		font-weight: bold;
-		color: colors.$gold;
-		text-decoration: none;
 		text-align: right;
-		transition: color 0.3s;
 
-		&:hover {
-			color: colors.$darkgold;
+		&-text {
+			font-weight: bold;
+			color: colors.$gold;
+			text-decoration: none;
+			transition: color 0.3s;
+			
+			&:hover {
+				color: colors.$darkgold;
+			}
 		}
 	}
 
@@ -537,6 +543,11 @@ h1.company-name {
 }
 
 @media (min-width: 768px) {
+	.header {
+		&__img {
+			background-image: url('../img/header-big.jpg');
+		}
+	}
 	.cards {
 		&__box {
 			grid-template-rows: 1fr;
@@ -634,7 +645,7 @@ h1.company-name {
 				}
 			}
 
-			&-btn{
+			&-btn {
 				grid-row: 3/4;
 			}
 		}
